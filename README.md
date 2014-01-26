@@ -43,7 +43,7 @@ EmailPreview.register 'multipart email (html + text)' do
 end
 
 # Rails ActionMailer Example
-# each execution is wrapped with a transaction and 
+# each execution is wrapped with a transaction and
 # rolled back after completed so there are no side-effects
 EmailPreview.register 'Rails ActionMailer User activation email' do
   u = User.create :email => 'foo@example.com'
@@ -75,7 +75,7 @@ end
 
 ### (optional) expose to production environment
 
-By default the email_preview feature is only available in development mode.  
+By default the email_preview feature is only available in development mode.
 To make it available to other environments use:
 
 ```ruby
@@ -95,7 +95,7 @@ EmailPreview.delivery_method = :smtp # or :sendmail, etc
 ActionMailer::Base.smtp_settings = {:port => 12345} # additional configuration is optional
 ```
 
-## Contributing 
+## Contributing
 
 * Fork the project
 * Fix the issue
@@ -103,6 +103,10 @@ ActionMailer::Base.smtp_settings = {:port => 12345} # additional configuration i
 * Submit pull request on github
 
 See CONTRIBUTORS.txt for list of project contributors
+
+### Testing
+
+     bundle exec rake test
 
 ## Copyright
 
