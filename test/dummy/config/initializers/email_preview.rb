@@ -23,3 +23,12 @@ EmailPreview.register 'multipart email (html + text)' do
     end
   end
 end
+
+EmailPreview.register 'email sent by model' do
+  User.new.send_welcome_email!
+  Mail.new do
+    to 'tom@example.com'
+    from 'me@foo.com'
+    body 'check this out'
+  end
+end
